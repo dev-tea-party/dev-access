@@ -14,7 +14,7 @@
 
 ## Database Set-up
 
-* Create a database in mysql.
+* Create a database in mysql. Import the sql dump file `./database/sql/access.sql`
 * Update the database environment file `.env.example` with your database connection values and rename the file to `.env`.
 
 ## CRUD Generator Set-up ##
