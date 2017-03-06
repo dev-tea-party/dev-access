@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit SupplierCategory #{{ $suppliercategory->sup_cat_id }}</div>
+                    <div class="panel-heading">Edit Supplier Category #{{ $suppliercategory->sup_cat_id }}</div>
                     <div class="panel-body">
                         <a href="{{ url('/suppliers/supplier-category') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />

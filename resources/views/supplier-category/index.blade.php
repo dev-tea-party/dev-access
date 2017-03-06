@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Suppliercategory</div>
+                    <div class="panel-heading">Supplier Categories</div>
                     <div class="panel-body">
                         <a href="{{ url('/suppliers/supplier-category/create') }}" class="btn btn-success btn-sm" title="Add New SupplierCategory">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
@@ -30,14 +30,14 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Sup Cat Name</th><th>Sup Cat Desc</th><th>Actions</th>
+                                        <th>ID</th><th>Category Name</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($suppliercategory as $item)
                                     <tr>
                                         <td>{{ $item->sup_cat_id }}</td>
-                                        <td>{{ $item->sup_cat_name }}</td><td>{{ $item->sup_cat_desc }}</td>
+                                        <td>{{ $item->sup_cat_name }}</td>
                                         <td>
                                             <a href="{{ url('/suppliers/supplier-category/' . $item->sup_cat_id) }}" title="View SupplierCategory"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/suppliers/supplier-category/' . $item->sup_cat_id . '/edit') }}" title="Edit SupplierCategory"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
