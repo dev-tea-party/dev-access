@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('suppliers/supplier-category', 'Supplier\\SupplierCategoryController');
+Route::resource('projects/materials', 'Projects\\MaterialsController');
