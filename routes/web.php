@@ -16,9 +16,9 @@ Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/change-password', 'HomeController@changePassword')->name('change_password');
 
-Route::resource('suppliers/supplier-category', 'Supplier\\SupplierCategoryController');
-Route::resource('suppliers/supplier-manage', 'Supplier\\SupplierManageController');
+Route::resource('suppliers/supplier-category', 'Supplier\\SupplierCategoryController');Route::resource('suppliers/supplier-manage', 'Supplier\\SupplierManageController');
 
 Route::resource('projects/project-manage', 'Projects\\ProjectManageController');
 Route::resource('projects/job-order', 'Projects\\JobOrderController');
