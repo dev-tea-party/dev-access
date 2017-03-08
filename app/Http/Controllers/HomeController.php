@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /**
+     * Show the change password form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function changePassword()
+    {
+        return view('auth/passwords/change');
+    }
 }
