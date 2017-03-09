@@ -11,8 +11,8 @@
     <title>{{ config('app.name', 'One Access') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/font-awsome.css') }}" rel="stylesheet" type="text/css">
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
