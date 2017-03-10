@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Projectmanage</div>
+                    <div class="panel-heading">Manage Projects</div>
                     <div class="panel-body">
                         <a href="{{ url('/projects/project-manage/create') }}" class="btn btn-success btn-sm" title="Add New ProjectManage">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
@@ -30,7 +30,7 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Prj Code</th><th>Prj Name</th><th>Prj Desc</th><th>Actions</th>
+                                        <th>ID</th><th>Project Code</th><th>Name</th><th>Description</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
