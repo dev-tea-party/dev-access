@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">JobOrder {{ $joborder->jo_id }}</div>
+                    <div class="panel-heading">Job Order {{ $joborder->jo_code }}</div>
                     <div class="panel-body">
 
                         <a href="{{ url('/projects/job-order') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
@@ -33,7 +33,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $joborder->jo_id }}</td>
                                     </tr>
-                                    <tr><th> Jo Code </th><td> {{ $joborder->jo_code }} </td></tr><tr><th> Jo Desc </th><td> {{ $joborder->jo_desc }} </td></tr><tr><th> Jo Cost </th><td> {{ $joborder->jo_cost }} </td></tr>
+                                    <tr><th> JO Code </th><td> {{ $joborder->jo_code }} </td></tr><tr><th> Description </th><td> {{ $joborder->jo_desc }} </td></tr><tr><th> Cost </th><td> {{ $joborder->jo_cost }} </td></tr><tr><th> Project Code </th><td> {{ $joborder->prj_id }} </td></tr>
                                 </tbody>
                             </table>
                         </div>
