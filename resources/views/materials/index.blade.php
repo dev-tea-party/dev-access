@@ -30,7 +30,7 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Mat Item Code</th><th>Mat Item Qty</th><th>Jo Id</th><th>Actions</th>
+                                        <th>ID</th><th>Item Code</th><th>Qty</th><th>JO Code</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>

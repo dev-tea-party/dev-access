@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Material {{ $material->mat_id }}</div>
+                    <div class="panel-heading">Material Item Code {{ $material->mat_code }}</div>
                     <div class="panel-body">
 
                         <a href="{{ url('/projects/materials') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
@@ -33,7 +33,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $material->mat_id }}</td>
                                     </tr>
-                                    <tr><th> Mat Item Code </th><td> {{ $material->mat_item_code }} </td></tr><tr><th> Mat Item Qty </th><td> {{ $material->mat_item_qty }} </td></tr><tr><th> Jo Id </th><td> {{ $material->jo_id }} </td></tr>
+                                    <tr><th> Item Code </th><td> {{ $material->mat_item_code }} </td></tr><tr><th> Qty </th><td> {{ $material->mat_item_qty }} </td></tr><tr><th> JO Code </th><td> {{ $material->jo_id }} </td></tr>
                                 </tbody>
                             </table>
                         </div>
