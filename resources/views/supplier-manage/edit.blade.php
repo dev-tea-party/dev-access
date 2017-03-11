@@ -7,7 +7,7 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit SupplierManage #{{ $suppliermanage->sup_id }}</div>
+                    <div class="panel-heading">Edit Supplier {{ $suppliermanage->sup_name }}</div>
                     <div class="panel-body">
                         <a href="{{ url('/suppliers/supplier-manage') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
