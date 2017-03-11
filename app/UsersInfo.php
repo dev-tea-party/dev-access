@@ -25,5 +25,5 @@ class UsersInfo extends Model
      *
      * @var array
      */
-    protected $fillable = ['firstname', 'lastname', 'middlename', 'email', 'tel_loc', 'tel_num', 'mobile_loc', 'mobile_num', 'user_id'];
+    protected $fillable = ['firstname', 'lastname', 'middlename', 'email', 'tel_num', 'mobile_num', 'user_id'];
 }

@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="firstname" class="col-md-4 control-label">First name</label>
+                            <label for="firstname" class="col-md-4 control-label">First Name</label>
 
                             <div class="col-md-6">
                                 <input id="firstname" type="text" class="form-control" name="firstname" required>
@@ -55,15 +55,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="middlename" class="col-md-4 control-label">Middle name</label>
+                            <label for="middlename" class="col-md-4 control-label">Middle Name</label>
 
                             <div class="col-md-6">
-                                <input id="middlename" type="text" class="form-control" name="middlename" required>
+                                <input id="middlename" type="text" class="form-control" name="middlename">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="lastname" class="col-md-4 control-label">Last name</label>
+                            <label for="lastname" class="col-md-4 control-label">Last Name</label>
 
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control" name="lastname" required>
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Email address</label>
+                            <label for="email" class="col-md-4 control-label">Email</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="text" class="form-control" name="email" required>
@@ -85,7 +85,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="telnum" class="col-md-4 control-label">Telephone number</label>
+                            <label for="telnum" class="col-md-4 control-label">Telephone No.</label>
 
                             <div class="col-md-6">
                                 <input id="telnum" type="text" class="form-control" name="telnum" required>
@@ -93,26 +93,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="telloc" class="col-md-4 control-label">Telephone local number</label>
-
-                            <div class="col-md-6">
-                                <input id="telloc" type="text" class="form-control" name="telloc" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mobilenum" class="col-md-4 control-label">Mobile number</label>
+                            <label for="mobilenum" class="col-md-4 control-label">Mobile</label>
 
                             <div class="col-md-6">
                                 <input id="mobilenum" type="text" class="form-control" name="mobilenum" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mobileloc" class="col-md-4 control-label">Mobile local number</label>
-
-                            <div class="col-md-6">
-                                <input id="mobileloc" type="text" class="form-control" name="mobileloc" required>
                             </div>
                         </div>
 

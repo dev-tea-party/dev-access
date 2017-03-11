@@ -74,9 +74,7 @@ class RegisterController extends Controller
             'lastname' => $data['lastname'],
             'middlename' => $data['middlename'],
             'email' => $data['email'],
-            'tel_loc' => $data['telloc'],
             'tel_num' => $data['telnum'],
-            'mobile_loc' => $data['mobileloc'],
             'mobile_num' => $data['mobilenum'],
             'user_id' => $user->id
         ]);
