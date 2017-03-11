@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('suppliers/supplier-category', 'Supplier\\SupplierCategoryController');
 Route::resource('suppliers/supplier-manage', 'Supplier\\SupplierManageController');
+Route::resource('projects/project-manage', 'Projects\\ProjectManageController');
+
