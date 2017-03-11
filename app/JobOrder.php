@@ -27,5 +27,11 @@ class JobOrder extends Model
      */
     protected $fillable = ['jo_code', 'jo_desc', 'jo_cost', 'prj_id'];
 
-    
+    /**
+     * Get the Project Code that owns the Job Order.
+     */
+    public function project()
+    {
+        return $this->belongsTo('App\ProjectManage','prj_id','prj_id');
+    }
 }

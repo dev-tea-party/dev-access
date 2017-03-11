@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Projects;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\ProjectManage;
 use App\JobOrder;
 use Illuminate\Http\Request;
 use Session;
@@ -42,7 +43,10 @@ class JobOrderController extends Controller
      */
     public function create()
     {
-        return view('job-order.create');
+        $projects = ProjectManage::all();
+        $projectcodes = $projects->pluck('prj_code','prj_id');
+
+        return view('job-order.create',compact('projectcodes'));
     }
 
     /**
@@ -89,7 +93,10 @@ class JobOrderController extends Controller
     {
         $joborder = JobOrder::findOrFail($id);
 
-        return view('job-order.edit', compact('joborder'));
+        $projects = ProjectManage::all();
+        $projectcodes = $projects->pluck('prj_code','prj_id');
+
+        return view('job-order.edit', compact('joborder','projectcodes'));
     }
 
     /**

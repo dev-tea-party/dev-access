@@ -19,7 +19,7 @@
 </div><div class="form-group {{ $errors->has('prj_id') ? 'has-error' : ''}}">
     {!! Form::label('prj_id', 'Project Code', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('prj_id', ['prj_1', 'prj_2', 'prj_3'], null, ['class' => 'form-control']) !!}
+        {!! Form::select('prj_id', $projectcodes, null, ['class' => 'form-control']) !!}
         {!! $errors->first('prj_id', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

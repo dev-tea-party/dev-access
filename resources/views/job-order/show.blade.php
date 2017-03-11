@@ -33,7 +33,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $joborder->jo_id }}</td>
                                     </tr>
-                                    <tr><th> JO Code </th><td> {{ $joborder->jo_code }} </td></tr><tr><th> Description </th><td> {{ $joborder->jo_desc }} </td></tr><tr><th> Cost </th><td> {{ $joborder->jo_cost }} </td></tr><tr><th> Project Code </th><td> {{ $joborder->prj_id }} </td></tr>
+                                    <tr><th> JO Code </th><td> {{ $joborder->jo_code }} </td></tr><tr><th> Description </th><td> {{ $joborder->jo_desc }} </td></tr><tr><th> Cost </th><td> {{ $joborder->jo_cost }} </td></tr><tr><th> Project Code </th><td> {{ $joborder->project->prj_code }} </td></tr>
                                 </tbody>
                             </table>
                         </div>
