@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2017 at 04:11 PM
+-- Generation Time: Mar 11, 2017 at 02:13 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -401,11 +401,11 @@ CREATE TABLE `users_info` (
   `lastname` varchar(45) NOT NULL,
   `middlename` varchar(45) DEFAULT NULL,
   `email` varchar(45) NOT NULL,
-  `tel_loc` int(11) DEFAULT NULL,
   `tel_num` varchar(45) DEFAULT NULL,
-  `mobile_loc` int(11) NOT NULL,
   `mobile_num` varchar(45) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
