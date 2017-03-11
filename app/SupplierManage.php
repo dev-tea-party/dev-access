@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class SupplierManage extends Model
 {
     /**
@@ -27,5 +28,11 @@ class SupplierManage extends Model
      */
     protected $fillable = ['sup_name', 'sup_cat_id', 'sup_vat_num', 'sup_op_bal', 'sup_addr_1', 'sup_addr_2', 'sup_contact_name', 'sup_contact_email', 'sup_tel_num', 'sup_mobile_num', 'sup_fax_num', 'sup_website', 'sup_bank_acct_holder', 'sup_bank_acct_num', 'sup_bank_acct_type', 'sup_bank_name', 'sup_bank_code'];
 
-    
+    /**
+     * Get the category that owns the supplier.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\SupplierCategory','sup_cat_id','sup_cat_id');
+    }
 }

@@ -6,8 +6,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\SupplierManage;
+use App\SupplierCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Session;
+
+
 
 class SupplierManageController extends Controller
 {
@@ -55,7 +59,10 @@ class SupplierManageController extends Controller
      */
     public function create()
     {
-        return view('supplier-manage.create');
+        $categories = SupplierCategory::all();
+        $suppliercategory = $categories->pluck('sup_cat_name','sup_cat_id');
+        
+        return view('supplier-manage.create',compact('suppliercategory'));
     }
 
     /**
@@ -102,7 +109,10 @@ class SupplierManageController extends Controller
     {
         $suppliermanage = SupplierManage::findOrFail($id);
 
-        return view('supplier-manage.edit', compact('suppliermanage'));
+        $categories = SupplierCategory::all();
+        $suppliercategory = $categories->pluck('sup_cat_name','sup_cat_id');
+
+        return view('supplier-manage.edit', compact('suppliermanage','suppliercategory'));
     }
 
     /**

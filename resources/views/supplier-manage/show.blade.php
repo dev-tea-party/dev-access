@@ -34,7 +34,7 @@
                                         <th>ID</th><td>{{ $suppliermanage->sup_id }}</td>
                                     </tr>
                                     <tr><th> Sup Name </th><td> {{ $suppliermanage->sup_name }} </td></tr>
-                                    <tr><th> Sup Cat Id </th><td> {{ $suppliermanage->sup_cat_id }} </td></tr>
+                                    <tr><th> Sup Cat Id </th><td> {{ $suppliermanage->category->sup_cat_name }} </td></tr>
                                     <tr><th> Sup Vat Num </th><td> {{ $suppliermanage->sup_vat_num }} </td></tr>
                                     <tr><th> Sup Addr 1 </th><td> {{ $suppliermanage->sup_addr_1 }} </td></tr>
                                     <tr><th> Sup Addr 2 </th><td> {{ $suppliermanage->sup_addr_2 }} </td></tr>
