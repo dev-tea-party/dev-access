@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\ProjectManage;
 use App\JobOrder;
+use App\Materials as Material;
 use Illuminate\Http\Request;
 use Session;
 
@@ -98,6 +99,25 @@ class JobOrderController extends Controller
 
         return view('job-order.edit', compact('joborder','projectcodes'));
     }
+
+    /**
+     * Display materials based from the specified resource.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\View\View
+     */
+    public function materials($id)
+    {
+        $joborder = JobOrder::findOrFail($id);
+        $perPage = 25;
+
+        $materials = Material::where('jo_id', '=', "$id")
+                ->paginate($perPage);
+
+        return view('materials.index', compact('materials','joborder'));
+    }
+
 
     /**
      * Update the specified resource in storage.

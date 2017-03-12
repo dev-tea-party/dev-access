@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/projects/job-order/{id}/materials', 'Projects\\JobOrderController@materials');
 
 Route::resource('suppliers/supplier-category', 'Supplier\\SupplierCategoryController');
 Route::resource('suppliers/supplier-manage', 'Supplier\\SupplierManageController');
