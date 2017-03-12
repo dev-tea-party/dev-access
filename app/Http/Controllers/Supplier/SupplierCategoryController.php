@@ -12,6 +12,16 @@ use Session;
 class SupplierCategoryController extends Controller
 {
     /**
+     * User authentication method
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\View\View
