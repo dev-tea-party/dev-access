@@ -39,6 +39,8 @@
                                         <td>{{ $item->jo_id }}</td>
                                         <td>{{ $item->jo_code }}</td><td>{{ $item->jo_desc }}</td><td>{{ $item->project->prj_code }}</td>
                                         <td>
+
+                                            <a href="{{ url('/projects/job-order/' . $item->jo_id . '/materials') }}" title="Manage Materials"><button class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Materials</button></a>
                                             <a href="{{ url('/projects/job-order/' . $item->jo_id) }}" title="View JobOrder"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/projects/job-order/' . $item->jo_id . '/edit') }}" title="Edit JobOrder"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             {!! Form::open([
