@@ -46,7 +46,7 @@ class JobOrderController extends Controller
         $projects = ProjectManage::all();
         $projectcodes = $projects->pluck('prj_code','prj_id');
 
-        return view('job-order.create',compact('projectcodes'));
+    return view('job-order.create',compact('projectcodes'));
     }
 
     /**
@@ -60,8 +60,26 @@ class JobOrderController extends Controller
     {
         
         $requestData = $request->all();
+        /**
+        */
+
+        $this->validate($request, [
+            'jo_code' =>'required|max:45',
+            'jo_cost' => 'required|max:45',
+            'jo_desc' => 'required',
+            'prj_id' => 'required|unique:id|numeric'
+        ],[
+            'jo_code.required' => 'The Job Order code field is required.',
+            'jo_code.max' => 'The Job Order code may not be greater than 45 characters.',
+            'jo_cost.required'=> 'The Cost field is required.',
+            'jo_cost.max' => 'The Cost may not be greater than 45 characters.',
+            'jo_desc.required' => 'The Description field is required.',
+            'prj_id.required' => "The Project Code field is required.",
+            'prj_id.unique' => "The Project Code attempt to insert duplicate key."
+
+        ]);
         
-        JobOrder::create($requestData);
+       JobOrder::create($requestData);
 
         Session::flash('flash_message', 'JobOrder added!');
 
