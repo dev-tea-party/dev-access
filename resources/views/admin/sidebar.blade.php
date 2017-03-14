@@ -31,6 +31,11 @@
                         Account Balances
                     </a>
                 </li>
+                <li role="presentation">
+                    <a href="{{ url('/purchasing/purchase-orders') }}">
+                        Purchase Orders
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
