@@ -9,11 +9,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Materials</div>
                     <div class="panel-body">
-                        <a href="{{ url('/projects/materials/create') }}" class="btn btn-success btn-sm" title="Add New Material">
+                        <a href="{{ url('/projects/job-order/'. $id .'/materials/create') }}" class="btn btn-success btn-sm" title="Add New Material">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
-                        {!! Form::open(['method' => 'GET', 'url' => '/projects/materials', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
+                        {!! Form::open(['method' => 'GET', 'url' => '/projects/job-order/'. $id .'/materials', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                         <div class="input-group">
                             <input type="text" class="form-control" name="search" placeholder="Search...">
                             <span class="input-group-btn">
@@ -39,11 +39,11 @@
                                         <td>{{ $item->mat_id }}</td>
                                         <td>{{ $item->mat_item_code }}</td><td>{{ $item->mat_item_qty }}</td><td>{{ $item->jo_id }}</td>
                                         <td>
-                                            <a href="{{ url('/projects/materials/' . $item->mat_id) }}" title="View Material"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/projects/materials/' . $item->mat_id . '/edit') }}" title="Edit Material"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/projects/job-order/' . $item->jo_id . '/materials/' . $item->mat_id . '/show') }}" title="View Material"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/projects/job-order/' . $item->jo_id . '/materials/' . $item->mat_id . '/edit') }}" title="Edit Material"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
-                                                'url' => ['/projects/materials', $item->mat_id],
+                                                'url' => '/projects/job-order/' . $item->jo_id . '/materials/' . $item->mat_id,
                                                 'style' => 'display:inline'
                                             ]) !!}
                                                 {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(

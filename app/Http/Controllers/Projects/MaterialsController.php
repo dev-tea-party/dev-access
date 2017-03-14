@@ -16,22 +16,13 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index(Request $request)
+    public function index($id)
     {
-        $keyword = $request->get('search');
         $perPage = 25;
-
-        if (!empty($keyword)) {
-            $materials = Material::where('mat_item_code', 'LIKE', "%$keyword%")
-				->orWhere('mat_item_qty', 'LIKE', "%$keyword%")
-				->orWhere('jo_id', 'LIKE', "%$keyword%")
-				
+        $materials = Material::where('jo_id', '=', "$id")
                 ->paginate($perPage);
-        } else {
-            $materials = Material::paginate($perPage);
-        }
 
-        return view('materials.index', compact('materials'));
+        return view('materials.index', compact('materials','id'));
     }
 
     /**
@@ -39,9 +30,9 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create($id)
     {
-        return view('materials.create');
+        return view('materials.create', compact('id'));
     }
 
     /**
@@ -51,16 +42,17 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        
-        $requestData = $request->all();
-        
-        Material::create($requestData);
+        Material::create([
+            'mat_item_code' => $request['mat_item_code'],
+            'mat_item_qty' => $request['mat_item_qty'],
+            'jo_id' => $id
+        ]);
 
         Session::flash('flash_message', 'Material added!');
 
-        return redirect('projects/materials');
+        return redirect('/projects/job-order/'.$id.'/materials');
     }
 
     /**
@@ -70,9 +62,9 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function show($id)
+    public function show($id, $matid)
     {
-        $material = Material::findOrFail($id);
+        $material = Material::findOrFail($matid);
 
         return view('materials.show', compact('material'));
     }
@@ -84,9 +76,9 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function edit($id)
+    public function edit($id, $matid)
     {
-        $material = Material::findOrFail($id);
+        $material = Material::findOrFail($matid);
 
         return view('materials.edit', compact('material'));
     }
@@ -99,17 +91,17 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($id, Request $request)
-    {
-        
-        $requestData = $request->all();
-        
-        $material = Material::findOrFail($id);
-        $material->update($requestData);
+    public function update(Request $request, $id, $matid)
+    {   
+        $material = Material::findOrFail($matid);
+        $material->update([
+            'mat_item_code' => $request['mat_item_code'],
+            'mat_item_qty' => $request['mat_item_qty']
+        ]);
 
         Session::flash('flash_message', 'Material updated!');
 
-        return redirect('projects/materials');
+        return redirect('/projects/job-order/'.$id.'/materials');
     }
 
     /**
@@ -119,12 +111,12 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
+    public function destroy($id, $matid)
     {
-        Material::destroy($id);
+        Material::destroy($matid);
 
         Session::flash('flash_message', 'Material deleted!');
 
-        return redirect('projects/materials');
+        return redirect('/projects/job-order/'.$id.'/materials');
     }
 }

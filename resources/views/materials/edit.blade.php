@@ -9,7 +9,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Edit Material {{ $material->mat_item_code }}</div>
                     <div class="panel-body">
-                        <a href="{{ url('/projects/materials') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/projects/job-order/'. $material->jo_id .'/materials') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 
@@ -23,7 +23,7 @@
 
                         {!! Form::model($material, [
                             'method' => 'PATCH',
-                            'url' => ['/projects/materials', $material->mat_id],
+                            'url' => '/projects/job-order/'. $material->jo_id . '/materials/' . $material->mat_id,
                             'class' => 'form-horizontal',
                             'files' => true
                         ]) !!}

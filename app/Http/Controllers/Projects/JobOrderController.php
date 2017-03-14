@@ -101,25 +101,6 @@ class JobOrderController extends Controller
     }
 
     /**
-     * Display materials based from the specified resource.
-     *
-     * @param  int  $id
-     *
-     * @return \Illuminate\View\View
-     */
-    public function materials($id)
-    {
-        $joborder = JobOrder::findOrFail($id);
-        $perPage = 25;
-
-        $materials = Material::where('jo_id', '=', "$id")
-                ->paginate($perPage);
-
-        return view('materials.index', compact('materials','joborder'));
-    }
-
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  int  $id
