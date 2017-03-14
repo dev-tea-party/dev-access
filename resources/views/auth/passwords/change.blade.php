@@ -14,7 +14,7 @@
                     @endif
 
                     <!-- Start form -->
-                    {!! Form::open(array('url' => route('change_password'), 'method' => 'POST', 'class' => 'form-horizontal')) !!}
+                    {!! Form::open(array('url' => route('execute_change_password'), 'method' => 'POST', 'class' => 'form-horizontal')) !!}
                     {{ csrf_field() }}
                     
                     <div class="form-group">
