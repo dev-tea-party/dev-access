@@ -13,14 +13,24 @@
                         </div>
                     @endif
 
+                    @if (count($errors))
+                        <div class="alert alert-danger">
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <!-- Start form -->
                     {!! Form::open(array('url' => route('execute_change_password'), 'method' => 'POST', 'class' => 'form-horizontal')) !!}
                     {{ csrf_field() }}
-                    
+
                     <div class="form-group">
-                        {!! Form::label('current_password', 'Current Password', ['class' => 'col-md-4 control-label']) !!}
+                        {!! Form::label('password', 'Current Password', ['class' => 'col-md-4 control-label']) !!}
                         <div class = "col-md-6">
-                            {!! Form::password('current_password', ['class' => 'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::password('password', ['class' => 'form-control', 'required', 'autofocus']) !!}
                         </div>
                     </div>
 
@@ -36,7 +46,7 @@
                         <div class = "col-md-offset-4 col-md-8">
                             {!! Form::checkbox('set_default', 'set_default_password', true) !!}
                             {!! Form::label('set_default', 'Use as default password') !!}
-                            </div>
+                        </div>
                     </div>
                     
                     <div class="form-group">
@@ -46,7 +56,6 @@
                         </div>
                     </div>
 
-                    
                     <div class="form-group">
                         <div class = "col-sm-12 text-center">
                             {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}

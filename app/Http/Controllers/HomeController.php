@@ -45,20 +45,21 @@ class HomeController extends Controller
      */
      public function changePassword () {
          $user = Auth::user();
+
          $validation = Validator::make(Request::all(), [
-             'password' => 'hash' . $user->password,
-             'new_password' => 'required|different:password|confirmed'
+             'password' => 'hash:' . $user->password,
+             'new_password' => 'required|different:password',
+             'confirm_password' => 'required|same:new_password'
          ]);
 
          if ($validation->fails()) {
-             var_dump($validation->errors());exit;
             return redirect()->back()->withErrors($validation->errors());
          }
 
          $user->password = Hash::make(Request::input('new_password')); //encrypt new password and update user password
          $user->save(); //save all changes to the user
 
-         return redirect()->back()->with('success-message', 'Your new password is now set!');
+         return redirect()->back()->with('status', 'Your new password is now set!');
 
 
      }
