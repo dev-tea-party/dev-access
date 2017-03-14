@@ -16,7 +16,8 @@ Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/change-password', 'HomeController@changePassword')->name('change_password');
+Route::get('/change-password', 'HomeController@showChangePasswordForm')->name('change_password');
+Route::post('/execute-change-password', 'HomeController@changePassword')->name('execute_change_password');
 
 Route::resource('suppliers/supplier-category', 'Supplier\\SupplierCategoryController');Route::resource('suppliers/supplier-manage', 'Supplier\\SupplierManageController');
 
