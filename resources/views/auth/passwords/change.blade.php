@@ -5,8 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-
+                <div class="panel-heading">Change Password</div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -14,60 +13,49 @@
                         </div>
                     @endif
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
-                        {{ csrf_field() }}
+                    <!-- Start form -->
+                    {!! Form::open(array('url' => 'password/reset', 'method' => 'POST', 'class' => 'form-horizontal')) !!}
+                    {{ csrf_field() }}
+                    
+                    <div class="form-group">
+                        {!! Form::label('current_password', 'Current Password', ['class' => 'col-md-4 control-label']) !!}
+                        <div class = "col-md-6">
+                            {!! Form::password('current_password', ['class' => 'form-control', 'required', 'autofocus']) !!}
+                        </div>
+                    </div>
 
+                    <div class="form-group">
+                        {!! Form::label('new_password', 'New Password', ['class' => 'col-md-4 control-label']) !!}
+                        <div class = "col-md-6">
+                            {!! Form::password('new_password', ['class' => 'form-control', 'required']) !!}
+                        </div>
                         
+                    </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Current Password</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                    <div class = "form-group">
+                        <div class = "col-md-offset-4 col-md-8">
+                            {!! Form::checkbox('set_default', 'set_default_password', true) !!}
+                            {!! Form::label('set_default', 'Use as default password') !!}
                             </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        {!! Form::label('confirm_password', 'Confirm Password', ['class' => 'col-md-4 control-label']) !!}
+                        <div class = "col-md-6">
+                            {!! Form::password('confirm_password', ['class' => 'form-control', 'required']) !!}
                         </div>
+                    </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">New Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    
+                    <div class="form-group">
+                        <div class = "col-sm-12 text-center">
+                            {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::button('Cancel', ['class' => 'btn btn-default']) !!}
                         </div>
+                    </div>
 
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Reset Password
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    {!! Form::close() !!}
+                    
                 </div>
             </div>
         </div>
