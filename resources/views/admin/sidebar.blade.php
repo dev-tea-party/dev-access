@@ -26,6 +26,11 @@
                         Suppliers
                     </a>
                 </li>
+                <li role="presentation">
+                    <a href="{{ url('/accounting/accounts-manage') }}">
+                        Account Balances
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
