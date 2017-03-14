@@ -24,3 +24,5 @@ Route::resource('projects/project-manage', 'Projects\\ProjectManageController');
 Route::resource('projects/job-order', 'Projects\\JobOrderController');
 
 
+
+Route::resource('warehouse/inventory-manage', 'Warehouse\\InventoryManageController');
