@@ -39,14 +39,6 @@
                         <div class = "col-md-6">
                             {!! Form::password('new_password', ['class' => 'form-control', 'required']) !!}
                         </div>
-                        
-                    </div>
-
-                    <div class = "form-group">
-                        <div class = "col-md-offset-4 col-md-8">
-                            {!! Form::checkbox('set_default', 'set_default_password', true) !!}
-                            {!! Form::label('set_default', 'Use as default password') !!}
-                        </div>
                     </div>
                     
                     <div class="form-group">
