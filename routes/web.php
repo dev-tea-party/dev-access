@@ -27,3 +27,5 @@ Route::resource('accounting/accounts-manage', 'Accounting\\AccountsManageControl
 
 Route::resource('purchasing/purchase-orders', 'Purchasing\\PurchaseOrdersController');
 
+
+Route::resource('warehouse/inventory-manage', 'Warehouse\\InventoryManageController');

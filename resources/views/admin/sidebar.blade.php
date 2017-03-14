@@ -27,6 +27,11 @@
                     </a>
                 </li>
                 <li role="presentation">
+                    <a href="{{ url('/warehouse/inventory-manage') }}">
+                        Inventory
+                    </a>
+                </li>
+                <li role="presentation">
                     <a href="{{ url('/accounting/accounts-manage') }}">
                         Account Balances
                     </a>
