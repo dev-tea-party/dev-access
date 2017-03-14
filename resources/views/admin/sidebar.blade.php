@@ -26,6 +26,11 @@
                         Suppliers
                     </a>
                 </li>
+                <li role="presentation">
+                    <a href="{{ url('/warehouse/inventory-manage') }}">
+                        Inventory
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
