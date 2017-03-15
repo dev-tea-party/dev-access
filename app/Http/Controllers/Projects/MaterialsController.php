@@ -16,12 +16,24 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index($job_id)
+    public function index(Request $request, $job_id)
     {
+        $keyword = $request->get('search');
         $perPage = 25;
-        $materials = Material::where('jo_id', '=', "$job_id")
-                ->paginate($perPage);
 
+        if (!empty($keyword)) {
+            $materials = Material::where(function ($query) use ($keyword) {
+                    $query->where('mat_item_code', 'LIKE', "%$keyword%")
+                          ->orWhere('mat_item_qty', 'LIKE', "%$keyword%");
+                })->where(function ($query) use ($job_id) {
+                    $query->where('jo_id', '=', "$job_id");
+                })
+                ->paginate($perPage);
+        } else {
+            $materials = Material::where('jo_id', '=', "$job_id")
+                ->paginate($perPage);
+        }
+        
         return view('materials.index', compact('materials','job_id'));
     }
 

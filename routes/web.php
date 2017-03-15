@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('projects/job-order/{job_id}/materials/create', 'Projects\\MaterialsController@create');
-
 Route::resource('suppliers/supplier-category', 'Supplier\\SupplierCategoryController');
 Route::resource('suppliers/supplier-manage', 'Supplier\\SupplierManageController');
 
