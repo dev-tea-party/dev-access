@@ -27,5 +27,6 @@ class CompanyDetail extends Model
      */
     protected $fillable = ['company_name', 'contact_name', 'billing_address', 'business_type', 'city', 'state_province', 'country', 'zip_code', 'email', 'url', 'tel_no', 'mob_no', 'fax_no', 'other_details'];
 
+    public $timestamps = false;
     
 }

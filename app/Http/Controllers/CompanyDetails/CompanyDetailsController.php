@@ -18,31 +18,10 @@ class CompanyDetailsController extends Controller
      */
     public function index(Request $request)
     {
-        $keyword = $request->get('search');
-        $perPage = 25;
 
-        if (!empty($keyword)) {
-            $companydetails = CompanyDetail::where('company_name', 'LIKE', "%$keyword%")
-				->orWhere('contact_name', 'LIKE', "%$keyword%")
-				->orWhere('billing_address', 'LIKE', "%$keyword%")
-				->orWhere('business_type', 'LIKE', "%$keyword%")
-				->orWhere('city', 'LIKE', "%$keyword%")
-				->orWhere('state_province', 'LIKE', "%$keyword%")
-				->orWhere('country', 'LIKE', "%$keyword%")
-				->orWhere('zip_code', 'LIKE', "%$keyword%")
-				->orWhere('email', 'LIKE', "%$keyword%")
-				->orWhere('url', 'LIKE', "%$keyword%")
-				->orWhere('tel_no', 'LIKE', "%$keyword%")
-				->orWhere('mob_no', 'LIKE', "%$keyword%")
-				->orWhere('fax_no', 'LIKE', "%$keyword%")
-				->orWhere('other_details', 'LIKE', "%$keyword%")
-				
-                ->paginate($perPage);
-        } else {
-            $companydetails = CompanyDetail::paginate($perPage);
-        }
+        $companyDetails = CompanyDetail::where('id','=',1)->first();
 
-        return view('company-details.index', compact('companydetails'));
+        return $companyDetails ? $this->edit(1) : $this->create();
     }
 
     /**
@@ -71,7 +50,7 @@ class CompanyDetailsController extends Controller
 
         Session::flash('flash_message', 'CompanyDetail added!');
 
-        return redirect('company/company-details');
+        return redirect('company');
     }
 
     /**
@@ -120,7 +99,7 @@ class CompanyDetailsController extends Controller
 
         Session::flash('flash_message', 'CompanyDetail updated!');
 
-        return redirect('company/company-details');
+        return redirect('company');
     }
 
     /**
@@ -136,6 +115,6 @@ class CompanyDetailsController extends Controller
 
         Session::flash('flash_message', 'CompanyDetail deleted!');
 
-        return redirect('company/company-details');
+        return redirect('company');
     }
 }

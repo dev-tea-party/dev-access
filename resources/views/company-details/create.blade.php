@@ -7,9 +7,8 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Add Company Details</div>
+                    <div class="panel-heading">Company Details</div>
                     <div class="panel-body">
-                        <a href="{{ url('/company') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 
@@ -21,7 +20,7 @@
                             </ul>
                         @endif
 
-                        {!! Form::open(['url' => '/companydetails', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        {!! Form::open(['url' => '/company', 'class' => 'form-horizontal', 'files' => true]) !!}
 
                         @include ('company-details.form')
 

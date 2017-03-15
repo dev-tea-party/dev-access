@@ -112,6 +112,8 @@
 
 <div class="form-group">
     <div class="col-md-offset-4 col-md-4">
-        {!! Form::submit(isset($submitButtonText) ? $submitButtonText : 'Create', ['class' => 'btn btn-primary']) !!}
+        {!! Form::button('Print', ['class' => 'btn btn-default']) !!}
+        {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+        <a href="{{ url('/home') }}" title="Back">{!! Form::button('Back', ['class' => 'btn btn-default']) !!}</a>
     </div>
 </div>
