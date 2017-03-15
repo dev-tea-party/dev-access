@@ -20,10 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('projects/job-order/{job_id}/materials/create', 'Projects\\MaterialsController@create');
-Route::get('projects/job-order/{job_id}/materials/{mat_id}', 'Projects\\MaterialsController@update');
-Route::get('projects/job-order/{job_id}/materials/{mat_id}', 'Projects\\MaterialsController@destroy');
-Route::get('projects/job-order/{job_id}/materials/{mat_id}/show', 'Projects\\MaterialsController@show');
-Route::get('projects/job-order/{job_id}/materials/{mat_id}/edit', 'Projects\\MaterialsController@edit');
 
 Route::resource('suppliers/supplier-category', 'Supplier\\SupplierCategoryController');
 Route::resource('suppliers/supplier-manage', 'Supplier\\SupplierManageController');

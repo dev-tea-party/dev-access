@@ -62,9 +62,9 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function show($job_id, $mat_id)
+    public function show($job_id, $id)
     {
-        $material = Material::findOrFail($mat_id);
+        $material = Material::findOrFail($id);
 
         return view('materials.show', compact('material'));
     }
@@ -76,9 +76,9 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function edit($job_id, $mat_id)
+    public function edit($job_id, $id)
     {
-        $material = Material::findOrFail($mat_id);
+        $material = Material::findOrFail($id);
 
         return view('materials.edit', compact('material'));
     }
@@ -91,9 +91,9 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $job_id, $mat_id)
+    public function update(Request $request, $job_id, $id)
     {   
-        $material = Material::findOrFail($mat_id);
+        $material = Material::findOrFail($id);
         $material->update([
             'mat_item_code' => $request['mat_item_code'],
             'mat_item_qty' => $request['mat_item_qty']
@@ -111,9 +111,9 @@ class MaterialsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($job_id, $mat_id)
+    public function destroy($job_id, $id)
     {
-        Material::destroy($mat_id);
+        Material::destroy($id);
 
         Session::flash('flash_message', 'Material deleted!');
 

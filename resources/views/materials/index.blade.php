@@ -39,7 +39,7 @@
                                         <td>{{ $item->mat_id }}</td>
                                         <td>{{ $item->mat_item_code }}</td><td>{{ $item->mat_item_qty }}</td><td>{{ $item->jo_id }}</td>
                                         <td>
-                                            <a href="{{ url('/projects/job-order/' . $item->jo_id . '/materials/' . $item->mat_id . '/show') }}" title="View Material"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/projects/job-order/' . $item->jo_id . '/materials/' . $item->mat_id) }}" title="View Material"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/projects/job-order/' . $item->jo_id . '/materials/' . $item->mat_id . '/edit') }}" title="Edit Material"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
