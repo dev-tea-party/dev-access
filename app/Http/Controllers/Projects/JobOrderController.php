@@ -46,7 +46,7 @@ class JobOrderController extends Controller
         $projects = ProjectManage::all();
         $projectcodes = $projects->pluck('prj_code','prj_id');
 
-    return view('job-order.create',compact('projectcodes'));
+        return view('job-order.create',compact('projectcodes'));
     }
 
     /**
@@ -60,8 +60,6 @@ class JobOrderController extends Controller
     {
         
         $requestData = $request->all();
-        /**
-        */
 
         $this->validate($request, [
             'jo_code' =>'required|max:45',
@@ -79,7 +77,7 @@ class JobOrderController extends Controller
 
         ]);
         
-       JobOrder::create($requestData);
+        JobOrder::create($requestData);
 
         Session::flash('flash_message', 'JobOrder added!');
 
