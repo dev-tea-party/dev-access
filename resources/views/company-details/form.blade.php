@@ -30,11 +30,11 @@
     </div>
 </div>
 
-<div class="form-group {{ $errors->has('city') ? 'has-error' : ''}}">
-    {!! Form::label('city', 'City', ['class' => 'col-md-4 control-label']) !!}
-    <div class="col-md-2">
-        {!! Form::text('city', null, ['class' => 'form-control']) !!}
-        {!! $errors->first('city', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('country') ? 'has-error' : ''}}">
+    {!! Form::label('country', 'Country', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::select('country', ['Philippines', 'China', 'Japan'], 'Philippines', ['class' => 'form-control']) !!}
+        {!! $errors->first('country', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 
@@ -46,11 +46,11 @@
     </div>
 </div>
 
-<div class="form-group {{ $errors->has('country') ? 'has-error' : ''}}">
-    {!! Form::label('country', 'Country', ['class' => 'col-md-4 control-label']) !!}
-    <div class="col-md-6">
-        {!! Form::select('country', ['Philippines', 'China', 'Japan'], 'Philippines', ['class' => 'form-control']) !!}
-        {!! $errors->first('country', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('city') ? 'has-error' : ''}}">
+    {!! Form::label('city', 'City', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-2">
+        {!! Form::text('city', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('city', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 
@@ -71,7 +71,7 @@
 </div>
 
 <div class="form-group {{ $errors->has('url') ? 'has-error' : ''}}">
-    {!! Form::label('url', 'Url', ['class' => 'col-md-4 control-label']) !!}
+    {!! Form::label('url', 'Website', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::text('url', null, ['class' => 'form-control']) !!}
         {!! $errors->first('url', '<p class="help-block">:message</p>') !!}
@@ -79,23 +79,23 @@
 </div>
 
 <div class="form-group {{ $errors->has('tel_no') ? 'has-error' : ''}}">
-    {!! Form::label('tel_no', 'Tel No', ['class' => 'col-md-4 control-label']) !!}
+    {!! Form::label('tel_no', 'Telephone No.', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::number('tel_no', null, ['class' => 'form-control']) !!}
+        {!! Form::text('tel_no', null, ['class' => 'form-control']) !!}
         {!! $errors->first('tel_no', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 
 <div class="form-group {{ $errors->has('mob_no') ? 'has-error' : ''}}">
-    {!! Form::label('mob_no', 'Mob No', ['class' => 'col-md-4 control-label']) !!}
+    {!! Form::label('mob_no', 'Mobile No.', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::number('mob_no', null, ['class' => 'form-control']) !!}
+        {!! Form::text('mob_no', null, ['class' => 'form-control']) !!}
         {!! $errors->first('mob_no', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 
 <div class="form-group {{ $errors->has('fax_no') ? 'has-error' : ''}}">
-    {!! Form::label('fax_no', 'Fax No', ['class' => 'col-md-4 control-label']) !!}
+    {!! Form::label('fax_no', 'Fax No.', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::number('fax_no', null, ['class' => 'form-control']) !!}
         {!! $errors->first('fax_no', '<p class="help-block">:message</p>') !!}

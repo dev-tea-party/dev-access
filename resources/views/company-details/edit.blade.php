@@ -22,7 +22,7 @@
 
                         {!! Form::model($companydetail, [
                             'method' => 'PATCH',
-                            'url' => ['/company', $companydetail->id],
+                            'url' => ['/company-details', $companydetail->id],
                             'class' => 'form-horizontal',
                             'files' => true
                         ]) !!}

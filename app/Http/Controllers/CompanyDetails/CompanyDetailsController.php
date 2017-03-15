@@ -50,7 +50,7 @@ class CompanyDetailsController extends Controller
 
         Session::flash('flash_message', 'CompanyDetail added!');
 
-        return redirect('company');
+        return redirect('company-details');
     }
 
     /**
@@ -99,7 +99,7 @@ class CompanyDetailsController extends Controller
 
         Session::flash('flash_message', 'CompanyDetail updated!');
 
-        return redirect('company');
+        return redirect('company-details');
     }
 
     /**
@@ -115,6 +115,6 @@ class CompanyDetailsController extends Controller
 
         Session::flash('flash_message', 'CompanyDetail deleted!');
 
-        return redirect('company');
+        return redirect('company-details');
     }
 }

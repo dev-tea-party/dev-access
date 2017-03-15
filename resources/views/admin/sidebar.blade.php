@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li role="presentation">
-                    <a href="{{ url('/company') }}">
+                    <a href="{{ url('/company-details') }}">
                         Company Details
                     </a>
                 </li>

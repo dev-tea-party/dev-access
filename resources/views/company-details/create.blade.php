@@ -20,7 +20,7 @@
                             </ul>
                         @endif
 
-                        {!! Form::open(['url' => '/company', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        {!! Form::open(['url' => '/company-details', 'class' => 'form-horizontal', 'files' => true]) !!}
 
                         @include ('company-details.form')
 
