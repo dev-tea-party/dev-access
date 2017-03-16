@@ -46,6 +46,11 @@
                         Company Details
                     </a>
                 </li>
+                <li role="presentation">
+                    <a href="{{ url('/users-manage') }}">
+                        User Management
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
