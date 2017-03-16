@@ -22,28 +22,35 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Company Details</div>
                         <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-borderless">
-                                    <thead>
-                                        <tr><th>Company Name</th><td> {{ $companyDetails->company_name }} </td></tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr><th>Business Type</th><td> {{ $companyDetails->business_type }} </td></tr>
-                                        <tr><th>Contact Name</th><td> {{ $companyDetails->contact_name }} </td></tr>
-                                        <tr><th>Billing Address</th><td> {{ $companyDetails->billing_address }} </td></tr>
-                                        <tr><th>Country</th><td> {{ $companyDetails->country }} </td></tr>
-                                        <tr><th>State / Province</th><td> {{ $companyDetails->state_province }} </td></tr>
-                                        <tr><th>City</th><td> {{ $companyDetails->city }} </td></tr>
-                                        <tr><th>Zip Code</th><td> {{ $companyDetails->zip_code }} </td></tr>
-                                        <tr><th>Email</th><td> {{ $companyDetails->email }} </td></tr>
-                                        <tr><th>Website</th><td> {{ $companyDetails->url }} </td></tr>
-                                        <tr><th>Telephone No.</th><td> {{ $companyDetails->tel_no }} </td></tr>
-                                        <tr><th>Mobile No.</th><td> {{ $companyDetails->mob_no }} </td></tr>
-                                        <tr><th>Fax No.</th><td> {{ $companyDetails->fax_no }} </td></tr>
-                                        <tr><th>Other Details</th><td> {{ $companyDetails->other_details }} </td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
+
+                            @if (count($companyDetails) !== 1)
+                                <div class="table-responsive">
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr><th>Company Name</th><td> {{ $companyDetails->company_name }} </td></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><th>Business Type</th><td> {{ $companyDetails->business_type }} </td></tr>
+                                            <tr><th>Contact Name</th><td> {{ $companyDetails->contact_name }} </td></tr>
+                                            <tr><th>Billing Address</th><td> {{ $companyDetails->billing_address }} </td></tr>
+                                            <tr><th>Country</th><td> {{ $companyDetails->country }} </td></tr>
+                                            <tr><th>State / Province</th><td> {{ $companyDetails->state_province }} </td></tr>
+                                            <tr><th>City</th><td> {{ $companyDetails->city }} </td></tr>
+                                            <tr><th>Zip Code</th><td> {{ $companyDetails->zip_code }} </td></tr>
+                                            <tr><th>Email</th><td> {{ $companyDetails->email }} </td></tr>
+                                            <tr><th>Website</th><td> {{ $companyDetails->url }} </td></tr>
+                                            <tr><th>Telephone No.</th><td> {{ $companyDetails->tel_no }} </td></tr>
+                                            <tr><th>Mobile No.</th><td> {{ $companyDetails->mob_no }} </td></tr>
+                                            <tr><th>Fax No.</th><td> {{ $companyDetails->fax_no }} </td></tr>
+                                            <tr><th>Other Details</th><td> {{ $companyDetails->other_details }} </td></tr>
+                                            <tr><th>Other Details</th><td> {{ $companyDetails->other_deta22ils }} </td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @else
+                                <div class="text-center">No details found! Click {{ HTML::link('/company-details', 'here')}} to add.</div>
+                            @endif
+                            
                         </div>
                     </div>
                 </div>
