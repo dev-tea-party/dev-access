@@ -23,7 +23,7 @@
                         <div class="panel-heading">Company Details</div>
                         <div class="panel-body">
 
-                            @if (count($companyDetails) !== 1)
+                            @if (count($companyDetails) === 1)
                                 <div class="table-responsive">
                                     <table class="table table-borderless">
                                         <thead>
