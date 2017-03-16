@@ -34,3 +34,5 @@ Route::resource('purchasing/purchase-orders', 'Purchasing\\PurchaseOrdersControl
 Route::resource('warehouse/inventory-manage', 'Warehouse\\InventoryManageController');
 
 Route::resource('company-details', 'CompanyDetails\\CompanyDetailsController');
+
+Route::resource('users-manage', 'Admin\\UsersManageController');
