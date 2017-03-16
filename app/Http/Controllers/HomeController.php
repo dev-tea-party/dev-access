@@ -7,6 +7,7 @@ use Auth;
 use Hash;
 use Validator;
 use App\UsersInfo;
+use App\CompanyDetail;
 
 class HomeController extends Controller
 {
@@ -32,7 +33,7 @@ class HomeController extends Controller
         $userInfo = UsersInfo::findOrFail($user->id);
 
         // Fetch company details
-        $companyDetails = null;
+        $companyDetails = CompanyDetail::where('id','=',1)->first();
 
         return view('home', compact(['userInfo', 'companyDetails']));
     }
