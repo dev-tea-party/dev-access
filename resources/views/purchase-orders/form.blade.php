@@ -13,7 +13,7 @@
 </div><div class="form-group {{ $errors->has('po_sup_id') ? 'has-error' : ''}}">
     {!! Form::label('po_sup_id', 'Supplier', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::number('po_sup_id', null, ['class' => 'form-control']) !!}
+        {!! Form::select('po_sup_id', $suppliers, ['class' => 'form-control']) !!}
         {!! $errors->first('po_sup_id', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('po_in_budget') ? 'has-error' : ''}}">

@@ -7,7 +7,7 @@
 </div><div class="form-group {{ $errors->has('sup_cat_id') ? 'has-error' : ''}}">
     {!! Form::label('sup_cat_id', 'Category', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('sup_cat_id', $suppliercategory, null, ['class' => 'form-control']) !!}
+        {!! Form::select('sup_cat_id', $suppliercategory, ['class' => 'form-control']) !!}
         {!! $errors->first('sup_cat_id', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('sup_vat_num') ? 'has-error' : ''}}">

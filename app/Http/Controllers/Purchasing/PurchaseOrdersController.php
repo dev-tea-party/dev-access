@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\PurchaseOrder;
+use App\SupplierManage;
 use Illuminate\Http\Request;
 use Session;
 
@@ -46,7 +47,11 @@ class PurchaseOrdersController extends Controller
      */
     public function create()
     {
-        return view('purchase-orders.create');
+        $supplierManage = SupplierManage::all();
+        $suppliers = $supplierManage->pluck('sup_name','sup_id');
+
+
+        return view('purchase-orders.create', compact('suppliers'));
     }
 
     /**
