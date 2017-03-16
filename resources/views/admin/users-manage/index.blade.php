@@ -7,10 +7,13 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
+                    <div class="panel-heading">Manage Users</div>
                     <div class="panel-body">
+                        <a href="{{ url('/users-manage/create') }}" class="btn btn-success btn-sm" title="Add New user">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
+                        {!! Form::open(['method' => 'GET', 'url' => '/users-manage', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                         <div class="input-group">
                             <input type="text" class="form-control" name="search" placeholder="Search...">
                             <span class="input-group-btn">
