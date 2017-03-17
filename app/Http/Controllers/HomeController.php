@@ -6,6 +6,8 @@ use Request;
 use Auth;
 use Hash;
 use Validator;
+use App\UsersInfo;
+use App\CompanyDetail;
 
 class HomeController extends Controller
 {
@@ -26,7 +28,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // Fetch user information
+        $user = Auth::user();
+        $userInfo = UsersInfo::findOrFail($user->id);
+
+        // Fetch company details
+        $companyDetails = CompanyDetail::where('id','=',1)->first();
+
+        return view('home', compact(['userInfo', 'companyDetails']));
     }
 
     /**
