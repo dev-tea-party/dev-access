@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\ProjectManage;
 use App\JobOrder;
+use App\Materials as Material;
 use Illuminate\Http\Request;
 use Session;
 

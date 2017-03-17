@@ -24,6 +24,7 @@ Route::resource('suppliers/supplier-manage', 'Supplier\\SupplierManageController
 
 Route::resource('projects/project-manage', 'Projects\\ProjectManageController');
 Route::resource('projects/job-order', 'Projects\\JobOrderController');
+Route::resource('projects/job-order/{job_id}/materials', 'Projects\\MaterialsController');
 
 Route::resource('accounting/accounts-manage', 'Accounting\\AccountsManageController');
 
