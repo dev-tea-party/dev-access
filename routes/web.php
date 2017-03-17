@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('warehouse/inventory-manage/withdraw', 'Warehouse\\InventoryManageController@withdraw');
 Route::get('/change-password', 'HomeController@showChangePasswordForm')->name('change_password');
 Route::post('/execute-change-password', 'HomeController@changePassword')->name('execute_change_password');
 

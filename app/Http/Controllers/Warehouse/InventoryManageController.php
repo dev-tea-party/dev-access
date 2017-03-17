@@ -130,4 +130,16 @@ class InventoryManageController extends Controller
 
         return redirect('warehouse/inventory-manage');
     }
+
+    /**
+     * Request to remove the specified resource from storage.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function withdraw()
+    {
+        return view('inventory-manage.withdraw');
+    }
 }

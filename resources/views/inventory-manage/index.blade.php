@@ -13,6 +13,10 @@
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
+                        <a href="{{ url('/warehouse/inventory-manage/withdraw') }}" class="btn btn-danger btn-sm" title="Withdraw Inventory Item Request">
+                            <i class="fa fa-minus" aria-hidden="true"></i> Withdraw Item
+                        </a>
+
                         {!! Form::open(['method' => 'GET', 'url' => '/warehouse/inventory-manage', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                         <div class="input-group">
                             <input type="text" class="form-control" name="search" placeholder="Search...">
