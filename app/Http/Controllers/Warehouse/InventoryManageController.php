@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\InventoryManage;
+use App\InventoryTransactions;
 use Illuminate\Http\Request;
 use Session;
 
@@ -59,7 +60,17 @@ class InventoryManageController extends Controller
         
         $requestData = $request->all();
         
-        InventoryManage::create($requestData);
+        $item = InventoryManage::create($requestData);
+
+        InventoryTransactions::create([
+            'inv_trans_item_code' => $item->inv_item_id,
+            'inv_trans_mat_id' => 0,
+            'inv_trans_qty' => $request['inv_item_qty'],
+            'inv_trans_unit' => $request['inv_item_unit'],
+            'inv_trans_unit_cost' => $request['inv_item_unit_cost'],
+            'inv_trans_action' => 'add',
+            'inv_trans_remarks' => $request['inv_item_desc']
+        ]);
 
         Session::flash('flash_message', 'InventoryManage added!');
 
@@ -132,14 +143,27 @@ class InventoryManageController extends Controller
     }
 
     /**
-     * Request to remove the specified resource from storage.
+     * Show the form for withdrawing resources.
      *
-     * @param  int  $id
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\View\View
      */
     public function withdraw()
     {
         return view('inventory-manage.withdraw');
+    }
+
+    /**
+     * Withdraw the resources in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function withdrawRequest(Request $request)
+    {
+        
+        $requestData = $request->all();
+
+        return redirect('warehouse/inventory-manage');
     }
 }
