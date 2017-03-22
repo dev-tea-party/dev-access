@@ -71,6 +71,23 @@ class JobOrderController extends Controller
     {
         
         $requestData = $request->all();
+
+        $this->validate($request, [
+            'jo_code' =>'required|max:45',
+            'jo_cost' => 'required|regex:/^\d*(\.\d{2})?/|numeric',
+            'jo_desc' => 'required',
+            'prj_id' => 'required|exists:projects|numeric'
+        ],[
+            'jo_code.required' => 'The Job Order code field is required.',
+            'jo_code.max' => 'The Job Order code may not be greater than 45 characters.',
+            'jo_cost.required'=> 'The Cost field is required.',
+            'jo_cost.regex' => 'The Cost accept only 2 decimals.',
+            'jo_cost.numeric' => 'The Cost only accept numbers.',
+            'jo_cost.max' => 'The Cost may not be greater than 45 characters.',
+            'jo_desc.required' => 'The Description field is required.',
+            'prj_id.required' => "The Project Code field is required."
+
+        ]);
         
         JobOrder::create($requestData);
 
